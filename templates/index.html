@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Car Price Predictor</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+    </style>
+</head>
+<body>
+    <section class="section">
+        <div class="h1-div">
+            <h1 class="h1-tag">Car Price Predictor</h1>
+        </div>
+
+        <form method="POST" action="/">
+
+            <div class="div-style">
+                <label for="com"><b><h3 style="display: inline-block;">Enter Company :</h3></b></label><br>
+                <select name="company" id="com" class="car" required="1">
+                    {% for company in companies %}
+                        <option value="{{ company }}">{{ company }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="div-style">
+                <label for="com"><b><h3 style="display: inline-block;">Enter Car Model :</h3></b></label><br>
+                <select name="name" id="com"  required="1" class="car">
+                    {% for model in car_models %}
+                        <option value="{{ model }}"> {{ model }} </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="div-style">
+                <label for="com"><b><h3 style="display: inline-block;">Enter Car Year When Buy :</h3></b></label><br>
+                <select name="years" id="com" class="car" required="1">
+                    {% for year in years %}
+                        <option value="{{ year }}"> {{ year }} </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="div-style">
+                <label for="com"><b><h3 style="display: inline-block;">Enter Fuel Type :</h3></b></label><br>
+                <select name="fuel" id="com" class="car" required="1">
+                    {% for fuel in fuel_type %}
+                        <option value="{{ fuel }}"> {{ fuel }} </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="div-style" style="height: 90px;">
+                <label for="com"><b><h3 style="display: inline-block;">Enter Kilometers Driven :</h3></b></label><br>
+                <input type="number" name="kms_driven" id="com" placeholder="Enter the distance driven by the car " style="width: 250px;height: 25px;text-align: center;border-radius: 8px;border-bottom: 1px solid black;margin-bottom: 30px;">
+            </div>
+
+            <div class="btn-div">
+                <button class="btn-style">Predict</button>
+            </div>
+
+        </form>
+
+        <div class="prediction">
+            {% if prediction %}
+                <h2 class="predictor">Predicted Price: ₹ {{ prediction }}</h2>
+            {% endif %}
+        </div>
+
+    </section>
+</body>
+</html>

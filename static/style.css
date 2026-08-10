@@ -1,0 +1,83 @@
+body{
+    background: url("car.png");
+    background-repeat: no-repeat;
+    background-size: cover
+}
+.section{
+    border: 1px solid black;
+    max-height: 1000px;
+    width: 600px;
+    text-align: center;
+    margin: auto;
+    border-radius: 15px;
+}
+.h1-tag{
+    color: black;
+    background-color: yellow;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 10px;
+    margin-top: 7px;
+    margin-bottom: 70px;
+
+    animation: dropdown 1.5s ease-out forwards;
+}
+
+@keyframes dropdown {
+
+    0%{
+        transform: translateY(-300px);
+        opacity: 0;
+    }
+    70%{
+        transform: translateY(70px);
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.car{
+    width: 250px;
+    height: 30px;
+    border-radius: 10px;
+}
+.div-style{
+    border: 1px solid;
+    width: 300px;
+    height: 80px;
+    margin: auto;
+    border-radius: 20px;
+    background: white;
+    margin-bottom: 20px;
+}
+h3{
+    margin-top: 5px;
+}
+.btn-div{
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+.btn-style{
+    width: 80px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: greenyellow;
+    font-size: larger;
+    font-weight: bolder;
+    cursor: pointer;
+}
+.prediction{
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+.predictor{
+    background-color: yellow;
+    display: inline-block;
+    padding: 6px;
+    border-radius: 10px;
+    color: black;
+    font-weight: bolder;
+}
